@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.bankify.backend.BankifyBackendApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.16 s -- in com.bankify.backend.BankifyBackendApplicationTests
