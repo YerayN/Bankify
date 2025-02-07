@@ -2,8 +2,7 @@ package com.bankify.models;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "usuarios")
@@ -13,28 +12,28 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, unique = true)
+    private String dni;
+
+    @Column(nullable = false)
     private String nombre;
 
-    @Column(nullable = false, unique = true, length = 100)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
-    private String contraseña;
+    private String password;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "fecha_registro", nullable = false, updatable = false)
-    private Date fechaRegistro = new Date();
-
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Cuenta> cuentas;
-
-    // Constructor vacío
-    public Usuario() {}
+    @Column(name = "fecha_registro", updatable = false)
+    private LocalDateTime fechaRegistro;
 
     // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
+    public String getDni() { return dni; }
+    public void setDni(String dni) { this.dni = dni; }
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
@@ -42,11 +41,9 @@ public class Usuario implements Serializable {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    public String getContraseña() { return contraseña; }
-    public void setContraseña(String contraseña) { this.contraseña = contraseña; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 
-    public Date getFechaRegistro() { return fechaRegistro; }
-
-    public List<Cuenta> getCuentas() { return cuentas; }
-    public void setCuentas(List<Cuenta> cuentas) { this.cuentas = cuentas; }
-}
+    public LocalDateTime getFechaRegistro() { return fechaRegistro; }
+    public void setFechaRegistro(LocalDateTime fechaRegistro) {this.fechaRegistro = fechaRegistro;}
+    }

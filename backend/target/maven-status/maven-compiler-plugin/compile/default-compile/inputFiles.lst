@@ -1,4 +1,9 @@
 /home/yeray/Código/Bankify/backend/src/main/java/com/bankify/BankifyBackendApplication.java
+/home/yeray/Código/Bankify/backend/src/main/java/com/bankify/controllers/UsuarioController.java
 /home/yeray/Código/Bankify/backend/src/main/java/com/bankify/models/Cuenta.java
 /home/yeray/Código/Bankify/backend/src/main/java/com/bankify/models/Transferencia.java
 /home/yeray/Código/Bankify/backend/src/main/java/com/bankify/models/Usuario.java
+/home/yeray/Código/Bankify/backend/src/main/java/com/bankify/repositories/CuentaRepository.java
+/home/yeray/Código/Bankify/backend/src/main/java/com/bankify/repositories/UsuarioRepository.java
+/home/yeray/Código/Bankify/backend/src/main/java/com/bankify/services/CuentaService.java
+/home/yeray/Código/Bankify/backend/src/main/java/com/bankify/services/UsuarioService.java
