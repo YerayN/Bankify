@@ -20,6 +20,10 @@ public class TransferenciaService {
     @Autowired
     private CuentaRepository cuentaRepository;
 
+    public Optional<Transferencia> obtenerTransferenciaPorId(Long id) {
+        return transferenciaRepository.findById(id);
+    }    
+
     public Transferencia realizarTransferencia(Long cuentaOrigenId, Long cuentaDestinoId, BigDecimal monto) {
         // Buscar las cuentas en la base de datos
         Optional<Cuenta> cuentaOrigenOpt = cuentaRepository.findById(cuentaOrigenId);
