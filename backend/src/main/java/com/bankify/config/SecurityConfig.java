@@ -15,8 +15,11 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/usuarios/registrar").permitAll() // Permitir registro sin autenticación
                 .requestMatchers("/api/usuarios/{id}").permitAll() // Permitir obtener usuario sin autenticación
+                .requestMatchers("/api/transferencias/**").anonymous() // Permitir transferencias sin autenticación
                 .anyRequest().authenticated() // Otras rutas requieren autenticación
-            );
+            )
+            .formLogin().disable() // Deshabilitar formulario de login
+            .httpBasic(); // Habilitar autenticación básica para probar
 
         return http.build();
     }

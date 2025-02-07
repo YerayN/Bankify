@@ -3,7 +3,7 @@ package com.bankify.models;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "transferencias")
@@ -26,7 +26,7 @@ public class Transferencia implements Serializable {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha", nullable = false, updatable = false)
-    private Date fecha = new Date();
+    private LocalDateTime fecha;
 
     // Constructor vacío
     public Transferencia() {}
@@ -44,5 +44,6 @@ public class Transferencia implements Serializable {
     public BigDecimal getMonto() { return monto; }
     public void setMonto(BigDecimal monto) { this.monto = monto; }
 
-    public Date getFecha() { return fecha; }
+    public LocalDateTime getFecha() { return fecha; }
+    public void setFecha(LocalDateTime fecha) {this.fecha = fecha;}
 }
